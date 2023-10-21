@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ketan.io.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-21T19:16:31" hostname="Ketans-MacBook-Pro.local" time="0.012">
+  <properties/>
+  <testcase name="test_main()" classname="ketan.io.MainTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Oct 22, 2023 12:46:31 AM ketan.io.Main main
+INFO: Hello Sweety!
+]]></system-err>
+</testsuite>
