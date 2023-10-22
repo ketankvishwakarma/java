@@ -1,4 +1,6 @@
 include 'java-generics'
-include 'java-generics:coding-examples'
-findProject(':java-generics:coding-examples')?.name = 'coding-examples'
+include 'coding-examples'
+//include 'java-generics:coding-examples'
+//findProject(':java-generics:coding-examples')?.name = 'coding-examples'
+include 'java-lambdas'
 
