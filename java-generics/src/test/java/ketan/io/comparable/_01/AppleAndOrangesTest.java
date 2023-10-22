@@ -18,7 +18,7 @@ class AppleAndOrangesTest {
         Apple a2 = new Apple(20);
         List<Apple> a = Arrays.asList(a1,a2);
         log.info("Apples -> "+AppleAndOranges.max(a).equals(a2));
-        Assertions.assertEquals(true,Collections.max(a).equals(a2));
+        Assertions.assertEquals(true,AppleAndOranges.max(a).equals(a2));
     }
 
     @Test
@@ -27,7 +27,7 @@ class AppleAndOrangesTest {
         Oranges o2 = new Oranges(20);
         List<Oranges> o = Arrays.asList(o1,o2);
         log.info("Oranges -> "+AppleAndOranges.max(o).equals(o2)+"");
-        Assertions.assertEquals(true,Collections.max(o).equals(o2));
+        Assertions.assertEquals(true,AppleAndOranges.max(o).equals(o2));
     }
 
     @Test
@@ -36,7 +36,7 @@ class AppleAndOrangesTest {
         Apple a2 = new Apple(20);
         List<Apple> a = Arrays.asList(a1,a2);
         log.info("Apples -> "+AppleAndOranges.max(a).equals(a1));
-        Assertions.assertEquals(false,Collections.max(a).equals(a1));
+        Assertions.assertEquals(false,AppleAndOranges.max(a).equals(a1));
     }
 
     @Test
@@ -45,6 +45,6 @@ class AppleAndOrangesTest {
         Oranges o2 = new Oranges(20);
         List<Oranges> o = Arrays.asList(o1,o2);
         log.info("Oranges -> "+AppleAndOranges.max(o).equals(o1)+"");
-        Assertions.assertEquals(false,Collections.max(o).equals(o1));
+        Assertions.assertEquals(false,AppleAndOranges.max(o).equals(o1));
     }
 }
