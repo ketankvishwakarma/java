@@ -1,2 +1,4 @@
 include 'java-generics'
+include 'java-generics:coding-examples'
+findProject(':java-generics:coding-examples')?.name = 'coding-examples'
 
