@@ -1,4 +1,4 @@
-package ketan.io.subtype;
+package ketan.io.comparable._01;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -10,6 +10,19 @@ import java.util.logging.Logger;
 public class AppleAndOranges {
     protected static final Logger log= Logger.getLogger("AppleAndOranges");
 
+    /**
+     *
+     * */
+    protected static <T extends Fruit & Comparable<? super T>> T max(Collection<? extends  T> inputCollection){
+        Iterator<? extends T> i = inputCollection.iterator();
+        T currentMax = i.next();
+        while (i.hasNext()){
+            T next = i.next();
+            if(next.compareTo((Fruit)currentMax)>0)
+                currentMax=next;
+        }
+        return currentMax;
+    }
 }
 
 abstract class Fruit{
@@ -29,10 +42,12 @@ abstract class Fruit{
 
     @Override
     public int hashCode() {
+    //Collections.max(Arrays.asList(1)).equals(1);
         int result = name.hashCode();
         result = 31 * result + size.hashCode();
         return result;
     }
+
     protected int compareTo(Fruit that){
         return Integer.compare(this.size,that.size);
     }
