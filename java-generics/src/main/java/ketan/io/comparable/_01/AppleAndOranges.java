@@ -10,9 +10,6 @@ import java.util.logging.Logger;
 public class AppleAndOranges {
     protected static final Logger log= Logger.getLogger("AppleAndOranges");
 
-    /**
-     *
-     * */
     protected static <T extends Fruit & Comparable<? super T>> T max(Collection<? extends  T> inputCollection){
         Iterator<? extends T> i = inputCollection.iterator();
         T currentMax = i.next();
@@ -42,7 +39,6 @@ abstract class Fruit{
 
     @Override
     public int hashCode() {
-    //Collections.max(Arrays.asList(1)).equals(1);
         int result = name.hashCode();
         result = 31 * result + size.hashCode();
         return result;
