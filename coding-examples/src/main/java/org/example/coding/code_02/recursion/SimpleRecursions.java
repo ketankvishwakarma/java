@@ -78,4 +78,16 @@ public class SimpleRecursions {
             return lastChar+go(substring);
         }
     }
+
+    static class DecimalToBinary {
+
+        static String go(int n){
+          if(n<=1) {
+              return String.valueOf(n);
+          }
+          var result = n/2;
+          var remainder = n%2;
+          return go(result)+String.valueOf(remainder);
+        }
+    }
 }

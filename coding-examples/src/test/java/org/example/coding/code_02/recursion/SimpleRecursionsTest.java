@@ -64,4 +64,11 @@ class SimpleRecursionsTest {
         Assertions.assertEquals(SimpleRecursions.SumOfArrayElements.go(Arrays.asList(1)),1);
         Assertions.assertEquals(SimpleRecursions.SumOfArrayElements.go(Arrays.asList(1, 2, 3)),6);
     }
+
+    @ParameterizedTest
+    @CsvSource({"5,101","11,1011"})
+    void test_decimal_to_binary(int input,String output){
+        Assertions.assertEquals(SimpleRecursions.DecimalToBinary.go(input),output);
+
+    }
 }
