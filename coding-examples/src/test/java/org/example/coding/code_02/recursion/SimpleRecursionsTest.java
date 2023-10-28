@@ -82,4 +82,9 @@ class SimpleRecursionsTest {
     void test_power_of(int value,int exp,int output){
         Assertions.assertEquals(SimpleRecursions.PowerOf.go(value,exp),output);
     }
+
+    @Test
+    void test_pascals_triangle(){
+        SimpleRecursions.PascalsTriangle.go(5);
+    }
 }
