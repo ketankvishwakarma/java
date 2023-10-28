@@ -1,6 +1,7 @@
 package org.example.coding.code_02.recursion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -113,31 +114,34 @@ public class SimpleRecursions {
     }
 
     static class PascalsTriangle{
-        static void go(int n){
-            calculateTriangle(n,System.out::println);
-        }
-        static List<Integer> calculateTriangle(int height, Consumer<List<Integer>> action){
+
+       static void go(int height){
+            calculatePascalsTriangle(height,System.out::println);
+       }
+
+        private static List<Integer> calculatePascalsTriangle(int height, Consumer<List<Integer>> consumer) {
+           // terminal condition
             if(height==1){
-                action.accept(List.of(1));
+                consumer.accept(List.of(1));
                 return List.of(1);
-            }else{
-                // compute previous line values
-                List<Integer> previousLineValues = calculateTriangle(height-1,action);
-                List<Integer> currentLineValues = currentLineValues(previousLineValues,height);
-                action.accept(currentLineValues);
-                return currentLineValues;
             }
+           // recursive descent
+           List<Integer> previousLineValues = calculatePascalsTriangle(height-1,consumer);
+           List<Integer> nextLine = calculateLine(height,previousLineValues);
+            consumer.accept(nextLine);
+           return nextLine;
         }
 
-        private static List<Integer> currentLineValues(List<Integer> previousLineValues,int height) {
-            List<Integer> line = new ArrayList<>();
-            line.add(1);
-            for(int i = 0;i<previousLineValues.size()-1;i++){
-                line.add(previousLineValues.get(i)+previousLineValues.get(i+1));
-            }
-            line.add(1);
-            return line;
+        private static List<Integer> calculateLine(int height, List<Integer> previousLineValues) {
+           List<Integer> line = new ArrayList<>();
+           line.add(1);
+           for(int i=0;i<previousLineValues.size()-1;i++){
+               line.add(previousLineValues.get(i)+previousLineValues.get(i+1));
+           }
+           line.add(1);
+           return line;
         }
+
 
     }
 }
