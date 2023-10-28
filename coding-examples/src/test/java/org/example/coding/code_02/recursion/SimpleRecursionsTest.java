@@ -69,6 +69,17 @@ class SimpleRecursionsTest {
     @CsvSource({"5,101","11,1011"})
     void test_decimal_to_binary(int input,String output){
         Assertions.assertEquals(SimpleRecursions.DecimalToBinary.go(input),output);
+    }
 
+    @ParameterizedTest
+    @CsvSource({"42, 52", "7, 7", "8, 10"})
+    void test_decimal_to_octa(int input,String output){
+        Assertions.assertEquals(SimpleRecursions.DecimalToOcta.go(input),output);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"2, 4, 16"})
+    void test_power_of(int value,int exp,int output){
+        Assertions.assertEquals(SimpleRecursions.PowerOf.go(value,exp),output);
     }
 }

@@ -90,4 +90,23 @@ public class SimpleRecursions {
           return go(result)+String.valueOf(remainder);
         }
     }
+
+    static class DecimalToOcta {
+
+        static String go(int n){
+            if(n<8)
+                return String.valueOf(n);
+            var result = n/8;
+            var remainder = n%8;
+            return go(result)+String.valueOf(remainder);
+        }
+    }
+
+    static class PowerOf {
+        static Integer go(int value,int exponent){
+            if(exponent<=1)
+                return value;
+            return value*go(value,exponent-1);
+        }
+    }
 }
