@@ -87,4 +87,9 @@ class SimpleRecursionsTest {
     void test_pascals_triangle(){
         SimpleRecursions.PascalsTriangle.go(5);
     }
+
+    @Test
+    void test_premutation(){
+        SimpleRecursions.Permutation.go("ABC");
+    }
 }

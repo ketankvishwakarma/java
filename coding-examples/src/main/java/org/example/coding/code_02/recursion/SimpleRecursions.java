@@ -1,8 +1,6 @@
 package org.example.coding.code_02.recursion;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class SimpleRecursions {
@@ -128,7 +126,7 @@ public class SimpleRecursions {
            // recursive descent
            List<Integer> previousLineValues = calculatePascalsTriangle(height-1,consumer);
            List<Integer> nextLine = calculateLine(height,previousLineValues);
-            consumer.accept(nextLine);
+           consumer.accept(nextLine);
            return nextLine;
         }
 
@@ -141,7 +139,23 @@ public class SimpleRecursions {
            line.add(1);
            return line;
         }
+    }
+    static class Permutation{
+        static void go(String val){
+            System.out.println(calculate(val,""));
+        }
 
-
+        static private Set<String> calculate(String val, String prefix) {
+            if(val.length()==0){
+                return Set.of(prefix);
+            }
+            Set<String> all = new HashSet<>();
+            for(int i = 0;i<val.length();i++){
+                var newPrefix = prefix+val.charAt(i);
+                var newRemaining = val.substring(0,i)+val.substring(i+1);
+                all.addAll(calculate(newRemaining,newPrefix));
+            }
+            return all;
+        }
     }
 }
